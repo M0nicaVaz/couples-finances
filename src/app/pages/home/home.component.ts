@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { ionAddOutline } from '@ng-icons/ionicons';
-import { FinancesService } from '../services/finances.service';
+import { FinancesService } from '../../services/finances.service';
+import { OutcomeFormComponent } from '../../components/outcome-form/outcome-form.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgIconComponent],
+  imports: [NgIconComponent, OutcomeFormComponent],
   viewProviders: [provideIcons({ ionAddOutline })],
   templateUrl: './home.component.html',
 })
@@ -14,11 +15,11 @@ export class HomeComponent {
   constructor(private financesService: FinancesService) {}
 
   ngOnInit(): void {
-    this.financesService.getOutcomes('/outcomes', {}).subscribe((outcomes) => {
+    this.financesService.getOutcomes('/outcomes').subscribe((outcomes) => {
       console.log(outcomes);
     });
 
-    this.financesService.getIncomes('/incomes', {}).subscribe((outcomes) => {
+    this.financesService.getIncomes('/incomes').subscribe((outcomes) => {
       console.log(outcomes);
     });
   }
