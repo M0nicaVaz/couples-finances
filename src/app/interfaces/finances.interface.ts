@@ -1,12 +1,14 @@
-import { HttpContext, HttpHeaders, HttpParams } from '@angular/common/http';
-
 export interface Finance {
   id: string;
   name: string;
   value: number;
 }
 
-export interface FinanceResponse {
+export interface GetFinanceResponse {
   data: Finance[];
   total: number;
+}
+
+export interface AddFinanceResponse {
+  message: string;
 }

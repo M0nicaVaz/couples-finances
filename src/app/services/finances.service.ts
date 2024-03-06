@@ -1,19 +1,29 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
-import { FinanceResponse } from './finances.service.types';
+import { Finance, GetFinanceResponse } from '../interfaces/finances.interface';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FinancesService {
-  constructor(private apiService: ApiService) {}
+  private baseUrl = 'http://localhost:8000/api';
 
-  getOutcomes = (url: string, params: any): Observable<FinanceResponse> => {
-    return this.apiService.get(url, params);
+  constructor(private http: HttpClient) {}
+
+  getOutcomes = (url: string): Observable<GetFinanceResponse> => {
+    return this.http.get<GetFinanceResponse>(`${this.baseUrl}/${url}`);
   };
 
-  getIncomes = (url: string, params: any): Observable<FinanceResponse> => {
-    return this.apiService.get(url, params);
+  getIncomes = (url: string): Observable<GetFinanceResponse> => {
+    return this.http.get<GetFinanceResponse>(`${this.baseUrl}/${url}`);
+  };
+
+  addOutcome = (url: string, data: Finance) => {
+    return this.http.post(`${this.baseUrl}/${url}`, data);
+  };
+
+  addIncome = (url: string, data: Finance) => {
+    return this.http.post(`${this.baseUrl}/${url}`, data);
   };
 }
