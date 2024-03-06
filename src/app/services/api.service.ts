@@ -7,9 +7,14 @@ import { Options } from './api.service.types';
   providedIn: 'root',
 })
 export class ApiService {
+  private baseUrl = 'https://localhost:8000';
+
   constructor(private httpClient: HttpClient) {}
 
   get<T>(url: string, options: Options): Observable<T> {
-    return this.httpClient.get<T>(url, options) as Observable<T>;
+    return this.httpClient.get<T>(
+      `${this.baseUrl}/${url}`,
+      options
+    ) as Observable<T>;
   }
 }
