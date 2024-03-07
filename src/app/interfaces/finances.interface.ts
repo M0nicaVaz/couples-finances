@@ -4,6 +4,8 @@ export interface Finance {
   value: number;
 }
 
+export type FinanceInput = Omit<Finance, 'id'>;
+
 export interface GetFinanceResponse {
   data: Finance[];
   total: number;

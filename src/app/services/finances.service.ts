@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Finance, GetFinanceResponse } from '../interfaces/finances.interface';
+import {
+  FinanceInput,
+  GetFinanceResponse,
+} from '../interfaces/finances.interface';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -19,11 +22,11 @@ export class FinancesService {
     return this.http.get<GetFinanceResponse>(`${this.baseUrl}/${url}`);
   };
 
-  addOutcome = (url: string, data: Finance) => {
+  addOutcome = (url: string, data: FinanceInput) => {
     return this.http.post(`${this.baseUrl}/${url}`, data);
   };
 
-  addIncome = (url: string, data: Finance) => {
+  addIncome = (url: string, data: FinanceInput) => {
     return this.http.post(`${this.baseUrl}/${url}`, data);
   };
 }
