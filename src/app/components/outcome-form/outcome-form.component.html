@@ -1,7 +1,4 @@
-<form
-  [formGroup]="outcomeForm"
-  class="max-w-[480px] bg-slate-800 p-12 rounded shadow gap-6 flex flex-col form-group relative"
->
+<form [formGroup]="outcomeForm" class="gap-6 flex flex-col form-group w-full">
   <button
     (click)="onCancel()"
     class="rounded-full p-1 transition-colors hover:bg-slate-700 absolute top-4 right-4 flex items-center justify-center"
@@ -22,7 +19,7 @@
     <label for="name">Nome</label>
     <input
       type="text"
-      class="form-control p-2 rounded bg-slate-900 h-12"
+      class="form-control p-2 rounded bg-slate-900 h-12 w-[360px]"
       id="name"
       placeholder="Ex: Aluguel, mercado..."
       formControlName="name"
@@ -33,7 +30,7 @@
     <label for="value">Valor</label>
     <input
       type="number"
-      class="form-control p-2 rounded bg-slate-900 h-12 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+      class="form-control p-2 rounded w-[360px] bg-slate-900 h-12 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
       id="value"
       placeholder="R$ 0,00"
       formControlName="value"
@@ -43,22 +40,13 @@
     />
   </div>
 
-  <div class="flex items-center justify-center gap-2 w-full">
-    <app-button
-      (click)="onCancel()"
-      [disabled]="loading()"
-      text="Cancelar"
-      variant="cancel"
-      class="w-full"
-    />
-    <app-button
-      [loading]="loading()"
-      [disabled]="loading() || outcomeForm.invalid"
-      (click)="onSubmit()"
-      text="Salvar"
-      variant="confirm"
-      type="submit"
-      class="w-full"
-    />
-  </div>
+  <app-button
+    [loading]="loading()"
+    [disabled]="loading() || outcomeForm.invalid"
+    (click)="onSubmit()"
+    text="Salvar"
+    variant="confirm"
+    type="submit"
+    class="w-full"
+  />
 </form>

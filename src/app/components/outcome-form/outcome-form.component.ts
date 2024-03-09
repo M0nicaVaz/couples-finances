@@ -36,20 +36,20 @@ export class OutcomeFormComponent {
   onSubmit() {
     this.loading.set(true);
 
-    if (this.outcomeForm.valid) {
-      this.financesService
-        .addOutcome('outcome', this.outcomeForm.value)
-        .subscribe({
-          next: (response) => {
-            console.log(response);
-            this.outcomeForm.reset();
-            this.loading.set(false);
-          },
-          error: (error) => {
-            this.loading.set(false);
-            console.log(error);
-          },
-        });
-    }
+    // if (this.outcomeForm.valid) {
+    //   this.financesService
+    //     .addOutcome('outcome', this.outcomeForm.value)
+    //     .subscribe({
+    //       next: (response) => {
+    //         console.log(response);
+    //         this.outcomeForm.reset();
+    //         this.loading.set(false);
+    //       },
+    //       error: (error) => {
+    //         this.loading.set(false);
+    //         console.log(error);
+    //       },
+    //     });
+    // }
   }
 }
