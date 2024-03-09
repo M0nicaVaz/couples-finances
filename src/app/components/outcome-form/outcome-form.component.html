@@ -1,7 +1,18 @@
 <form
   [formGroup]="outcomeForm"
-  class="max-w-[480px] bg-slate-800 p-12 rounded shadow gap-6 flex flex-col form-group"
+  class="max-w-[480px] bg-slate-800 p-12 rounded shadow gap-6 flex flex-col form-group relative"
 >
+  <button
+    (click)="onCancel()"
+    class="rounded-full p-1 transition-colors hover:bg-slate-700 absolute top-4 right-4 flex items-center justify-center"
+  >
+    <ng-icon
+      name="ionClose"
+      size="24"
+      class="text-slate-200 hover:text-slate-50"
+    />
+  </button>
+
   <div class="flex items-center justify-center gap-2">
     <span class="text-lg font-semibold">Adicionar nova despesa</span>
     <ng-icon name="ionTrendingDown" size="24" class="text-red-500" />
@@ -32,12 +43,22 @@
     />
   </div>
 
-  <button
-    [disabled]="loading() || outcomeForm.invalid"
-    (click)="onSubmit()"
-    type="submit"
-    class="bg-emerald-500 rounded h-12 w-full text-slate-50 enabled:hover:bg-emerald-400 transition-colors disabled:opacity-70"
-  >
-    @if(loading()) { Carregando... }@else { Salvar }
-  </button>
+  <div class="flex items-center justify-center gap-2 w-full">
+    <app-button
+      (click)="onCancel()"
+      [disabled]="loading()"
+      text="Cancelar"
+      variant="cancel"
+      class="w-full"
+    />
+    <app-button
+      [loading]="loading()"
+      [disabled]="loading() || outcomeForm.invalid"
+      (click)="onSubmit()"
+      text="Salvar"
+      variant="confirm"
+      type="submit"
+      class="w-full"
+    />
+  </div>
 </form>
