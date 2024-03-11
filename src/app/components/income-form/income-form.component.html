@@ -1,0 +1,55 @@
+<form [formGroup]="incomeForm" class="gap-6 flex flex-col form-group w-full">
+  <button
+    (click)="onCancel()"
+    class="rounded-full p-1 transition-colors hover:bg-slate-700 absolute top-4 right-4 flex items-center justify-center"
+  >
+    <ng-icon
+      name="ionClose"
+      size="24"
+      class="text-slate-200 hover:text-slate-50"
+    />
+  </button>
+
+  <div class="flex items-center justify-center gap-2">
+    <span class="text-lg font-semibold">Adicionar nova entrada</span>
+    <ng-icon name="ionTrendingUp" size="24" class="text-emerald-500" />
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="name">Responsável</label>
+
+    <select
+      id="name"
+      name="select"
+      formControlName="name"
+      class="form-control p-2 rounded bg-slate-900 h-12 w-[360px]"
+    >
+      <option value="valor1" selected>Pessoa 1</option>
+      <option value="valor2">Pessoa 2</option>
+    </select>
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="value">Valor</label>
+    <input
+      type="number"
+      class="form-control p-2 rounded w-[360px] bg-slate-900 h-12 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+      id="value"
+      placeholder="R$ 0,00"
+      formControlName="value"
+      min="0.00"
+      max="10000.00"
+      step="0.01"
+    />
+  </div>
+
+  <app-button
+    [loading]="loading()"
+    [disabled]="loading() || incomeForm.invalid"
+    (click)="onSubmit()"
+    text="Salvar"
+    variant="confirm"
+    type="submit"
+    class="w-full"
+  />
+</form>
