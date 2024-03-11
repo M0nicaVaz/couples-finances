@@ -1,6 +1,6 @@
 <dialog
   #dialog
-  class="max-w-[480px] text-zinc-50 bg-slate-800 p-12 rounded shadow relative z-10 backdrop:bg-slate-950/50"
+  class="max-w-[480px] text-slate-50 bg-slate-800 p-12 rounded shadow relative z-10 backdrop:bg-slate-950/50"
 >
   <ng-content></ng-content>
 
@@ -16,10 +16,10 @@
   </button>
 </dialog>
 
-<button
+<app-button
   (click)="openDialog()"
-  class="h-12 px-6 pl-10 rounded border-slate-200 border flex gap-1 items-center justify-center"
->
-  <ng-icon name="ionAdd" size="18" class="-ml-6"></ng-icon>
-  {{ triggerText }}
-</button>
+  [text]="triggerText"
+  [variant]="triggerVariant"
+  type="submit"
+  class="w-full"
+/>
