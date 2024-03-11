@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-export type ButtonVariants = 'cancel' | 'confirm' | 'danger';
-
+import { ButtonVariants } from '../../interfaces/button.interface';
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { ionAdd } from '@ng-icons/ionicons';
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [],
+  imports: [NgIconComponent],
+  viewProviders: [provideIcons({ ionAdd })],
   templateUrl: './button.component.html',
 })
 export class ButtonComponent {
