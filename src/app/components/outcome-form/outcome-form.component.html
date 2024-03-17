@@ -1,12 +1,12 @@
 <form [formGroup]="outcomeForm" class="gap-6 flex flex-col form-group w-full">
   <button
     (click)="onCancel()"
-    class="rounded-full p-1 transition-colors hover:bg-slate-700 absolute top-4 right-4 flex items-center justify-center"
+    class="rounded-full p-1 transition-colors hover:bg-dove-900 absolute top-4 right-4 flex items-center justify-center"
   >
     <ng-icon
       name="ionClose"
       size="24"
-      class="text-slate-200 hover:text-slate-50"
+      class="text-dove-200 hover:text-dove-50"
     />
   </button>
 
@@ -19,7 +19,7 @@
     <label for="name">Nome</label>
     <input
       type="text"
-      class="form-control p-2 rounded bg-slate-900 h-12 w-[360px]"
+      class="form-control p-2 rounded bg-dove-950 h-12 w-[360px]"
       id="name"
       placeholder="Ex: Aluguel, mercado..."
       formControlName="name"
@@ -30,7 +30,7 @@
     <label for="value">Valor</label>
     <input
       type="number"
-      class="form-control p-2 rounded w-[360px] bg-slate-900 h-12 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+      class="form-control p-2 rounded w-[360px] bg-dove-950 h-12 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
       id="value"
       placeholder="R$ 0,00"
       formControlName="value"

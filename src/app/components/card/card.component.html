@@ -1,27 +1,27 @@
 <div
-  class="flex bg-slate-800 rounded p-6 justify-between items-center [&:host]:flex-1 w-full"
+  class="border-l-4 border-dove-400 flex bg-dove-950 rounded p-6 justify-between items-center [&:host]:flex-1 w-full"
 >
   @if (secondName.length > 0) {
   <div class="flex items-center justify-center pr-6 flex-col">
     <span class="text-sm">{{ firstName }}</span>
-    <span class="text-slate-400">+</span>
+    <span class="text-dove-400">+</span>
     <span class="text-sm">{{ secondName }}</span>
   </div>
   } @else {
   <span class="pr-6">{{ firstName }}</span>
   }
 
-  <ul class="flex flex-col gap-1 self-end border-l border-slate-600 flex-1">
+  <ul class="flex flex-col gap-1 self-end border-l border-dove-600 flex-1">
     <li class="flex justify-between items-center gap-1">
-      <span class="text-slate-400 text-sm ml-auto">Entrada:</span>
-      <span class="text-slate-100"> {{ income }}</span>
+      <span class="text-dove-400 text-sm ml-auto">Entrada:</span>
+      <span class="text-dove-100"> {{ income }}</span>
     </li>
     <li class="flex justify-between items-center gap-1">
-      <span class="text-slate-400 text-sm ml-auto">Saída:</span>
+      <span class="text-dove-400 text-sm ml-auto">Saída:</span>
       <span class="text-red-400"> {{ outcome }}</span>
     </li>
     <li class="flex justify-between items-center gap-1">
-      <span class="text-slate-400 text-sm ml-auto">Restante:</span>
+      <span class="text-dove-400 text-sm ml-auto">Restante:</span>
       <span class="text-emerald-400"> {{ budget }}</span>
     </li>
   </ul>
