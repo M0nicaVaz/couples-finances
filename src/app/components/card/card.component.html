@@ -2,31 +2,13 @@
   class="flex bg-slate-800 rounded p-6 justify-between items-center [&:host]:flex-1 w-full"
 >
   @if (secondName.length > 0) {
-  <div class="flex items-center justify-center">
-    <div class="flex flex-col gap-1 items-center justify-center min-w-20">
-      <img
-        src="../../../assets/placeholder.jpeg"
-        class="rounded-full w-6 h-6"
-      />
-
-      <span class="text-sm">{{ firstName }}</span>
-    </div>
-    <span>+</span>
-    <div class="flex flex-col gap-1 items-center justify-center min-w-20">
-      <img
-        src="../../../assets/placeholder.jpeg"
-        class="rounded-full w-6 h-6"
-      />
-
-      <span class="text-sm">{{ secondName }}</span>
-    </div>
+  <div class="flex items-center justify-center pr-6 flex-col">
+    <span class="text-sm">{{ firstName }}</span>
+    <span class="text-slate-400">+</span>
+    <span class="text-sm">{{ secondName }}</span>
   </div>
   } @else {
-  <div class="flex flex-col gap-1 items-center justify-center min-w-20 pr-6">
-    <img src="../../../assets/placeholder.jpeg" class="rounded-full w-8 h-8" />
-
-    <span>{{ firstName }}</span>
-  </div>
+  <span class="pr-6">{{ firstName }}</span>
   }
 
   <ul class="flex flex-col gap-1 self-end border-l border-slate-600 flex-1">
