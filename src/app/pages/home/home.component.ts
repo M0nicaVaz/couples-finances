@@ -4,11 +4,21 @@ import { ionAddOutline } from '@ng-icons/ionicons';
 import { FinancesService } from '../../services/finances.service';
 import { OutcomeFormComponent } from '../../components/outcome-form/outcome-form.component';
 import { ModalComponent } from '../../components/modal/modal.component';
+import { IncomeFormComponent } from '../../components/income-form/income-form.component';
+import { CardComponent } from '../../components/card/card.component';
+import { ChartComponent } from '../../components/chart/chart.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgIconComponent, OutcomeFormComponent, ModalComponent],
+  imports: [
+    NgIconComponent,
+    OutcomeFormComponent,
+    ModalComponent,
+    IncomeFormComponent,
+    CardComponent,
+    ChartComponent,
+  ],
   viewProviders: [provideIcons({ ionAddOutline })],
   templateUrl: './home.component.html',
 })
