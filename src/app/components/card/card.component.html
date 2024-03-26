@@ -1,5 +1,8 @@
 <div
-  class="border-l-4 border-dove-400 flex bg-dove-950 rounded p-6 justify-between items-center [&:host]:flex-1 w-full"
+  [class]="
+    variant +
+    ' border-l-4 flex bg-dove-950 rounded p-6 justify-between items-center [&:host]:flex-1 w-full'
+  "
 >
   @if (secondName.length > 0) {
   <div class="flex items-center justify-center pr-6 flex-col">
