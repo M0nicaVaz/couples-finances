@@ -1,7 +1,7 @@
 <div
   [class]="
     variant +
-    ' border-l-4 flex bg-dove-950 rounded p-6 justify-between items-center [&:host]:flex-1 w-full'
+    ' border-l-4 flex bg-dove-200 rounded p-6 justify-between items-center [&:host]:flex-1 w-full'
   "
 >
   @if (secondName.length > 0) {
@@ -16,16 +16,16 @@
 
   <ul class="flex flex-col gap-1 self-end border-l border-dove-600 flex-1">
     <li class="flex justify-between items-center gap-1">
-      <span class="text-dove-400 text-sm ml-auto">Entrada:</span>
-      <span class="text-dove-100"> {{ income }}</span>
+      <span class="text-dove-600 text-sm ml-auto">Entrada:</span>
+      <span class="text-dove-800"> {{ income }}</span>
     </li>
     <li class="flex justify-between items-center gap-1">
-      <span class="text-dove-400 text-sm ml-auto">Saída:</span>
-      <span class="text-red-400"> {{ outcome }}</span>
+      <span class="text-dove-600 text-sm ml-auto">Saída:</span>
+      <span class="text-red-500"> {{ outcome }}</span>
     </li>
     <li class="flex justify-between items-center gap-1">
-      <span class="text-dove-400 text-sm ml-auto">Restante:</span>
-      <span class="text-emerald-400"> {{ budget }}</span>
+      <span class="text-dove-600 text-sm ml-auto">Restante:</span>
+      <span class="text-emerald-600"> {{ budget }}</span>
     </li>
   </ul>
 </div>

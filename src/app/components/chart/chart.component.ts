@@ -70,7 +70,7 @@ export class ChartComponent implements OnInit {
           y: {
             stacked: true,
             grid: {
-              color: '#b0b0b015',
+              color: '#b0b0b025',
             },
           },
         },

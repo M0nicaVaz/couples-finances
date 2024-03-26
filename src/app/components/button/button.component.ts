@@ -27,9 +27,9 @@ export class ButtonComponent {
 
 function getStylesFromVariant(variant: ButtonVariants) {
   const variantStyles = {
-    cancel: 'border-gray-500 enabled:hover:bg-gray-500',
-    confirm: 'border-emerald-500 bg-emerald-500 enabled:hover:bg-emerald-400 ',
-    danger: 'border-red-500 bg-red-500 enabled:hover:bg-red-600',
+    cancel: 'border-gray-500 enabled:hover:b-gray-500',
+    confirm: 'border-emerald-500  enabled:hover:bg-emerald-400/20',
+    danger: 'border-red-500 enabled:hover:bg-red-600/20',
   };
 
   return variantStyles[variant];
