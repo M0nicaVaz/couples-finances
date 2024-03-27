@@ -7,6 +7,7 @@ import { ModalComponent } from '../../components/modal/modal.component';
 import { IncomeFormComponent } from '../../components/income-form/income-form.component';
 import { CardComponent } from '../../components/card/card.component';
 import { ChartComponent } from '../../components/chart/chart.component';
+import { SpendingsChartComponent } from '../../components/spendings-chart/spendings-chart.component';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ import { ChartComponent } from '../../components/chart/chart.component';
     IncomeFormComponent,
     CardComponent,
     ChartComponent,
+    SpendingsChartComponent,
   ],
   viewProviders: [provideIcons({ ionAddOutline })],
   templateUrl: './home.component.html',
