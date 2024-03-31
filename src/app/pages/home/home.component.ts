@@ -8,6 +8,7 @@ import { IncomeFormComponent } from '../../components/income-form/income-form.co
 import { CardComponent } from '../../components/card/card.component';
 import { ChartComponent } from '../../components/chart/chart.component';
 import { SpendingsChartComponent } from '../../components/spendings-chart/spendings-chart.component';
+import { EditListComponent } from '../../components/edit-list/edit-list.component';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,7 @@ import { SpendingsChartComponent } from '../../components/spendings-chart/spendi
     CardComponent,
     ChartComponent,
     SpendingsChartComponent,
+    EditListComponent,
   ],
   viewProviders: [provideIcons({ ionAddOutline })],
   templateUrl: './home.component.html',
