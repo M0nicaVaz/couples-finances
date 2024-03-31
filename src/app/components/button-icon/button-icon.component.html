@@ -1,0 +1,10 @@
+<button
+  class="rounded-full transition-all flex relative items-center justify-center p-2 group hover:bg-dove-300"
+>
+  <ng-content></ng-content>
+  <span
+    class="text-xs h-0 w-0 invisible group-hover:visible group-hover:h-auto group-hover:w-fit absolute top-[calc(100%+4px)] group-hover:p-1 text-dove-50 bg-dove-300 rounded-full"
+  >
+    {{ text }}
+  </span>
+</button>
