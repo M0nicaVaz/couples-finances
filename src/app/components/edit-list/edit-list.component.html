@@ -1,49 +1,30 @@
 <section class="flex flex-col gap-4 justify-center">
   <strong>Lista de gastos</strong>
   <ul class="flex flex-col gap-2">
-    <li
-      class="flex rounded items-center justify-between odd:bg-dove-100 border-b border-dove-200 px-6 py-4"
-    >
-      <span>Mercado</span>
-      <div class="flex gap-2 items-center justify-center">
-        <app-button-icon text="Editar">
-          <ng-icon
-            size="20"
-            name="ionPencil"
-            class="group-hover:text-dove-100"
-          ></ng-icon>
-        </app-button-icon>
+    @for (outcome of groupedOutcome; track outcome.name) {
+      <li
+        class="flex rounded items-center justify-between odd:bg-dove-100 border-b border-dove-200 px-6 py-4"
+      >
+        <span>{{outcome.name}}</span>
+        <div class="flex gap-2 items-center justify-center">
+          <app-button-icon text="Editar">
+            <ng-icon
+              size="20"
+              name="ionPencil"
+              class="group-hover:text-dove-100"
+            ></ng-icon>
+          </app-button-icon>
 
-        <app-button-icon text="Excluir">
-          <ng-icon
-            size="20"
-            name="ionTrashBin"
-            class="group-hover:text-red-500"
-          ></ng-icon>
-        </app-button-icon>
-      </div>
-    </li>
-    <li
-      class="flex rounded items-center justify-between odd:bg-dove-100 border-b border-dove-200 px-6 py-4"
-    >
-      <span>Mercado</span>
-      <div class="flex gap-2 items-center justify-center">
-        <app-button-icon text="Editar">
-          <ng-icon
-            size="20"
-            name="ionPencil"
-            class="group-hover:text-dove-100"
-          ></ng-icon>
-        </app-button-icon>
+          <app-button-icon text="Excluir">
+            <ng-icon
+              size="20"
+              name="ionTrashBin"
+              class="group-hover:text-red-500"
+            ></ng-icon>
+          </app-button-icon>
+        </div>
+      </li>
 
-        <app-button-icon text="Excluir">
-          <ng-icon
-            size="20"
-            name="ionTrashBin"
-            class="group-hover:text-red-500"
-          ></ng-icon>
-        </app-button-icon>
-      </div>
-    </li>
+    }
   </ul>
 </section>

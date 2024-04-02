@@ -30,8 +30,9 @@ export class FinancesService {
 
   /* outcomes */
 
-  getOutcomes = (url: string): Observable<GetFinanceResponse> => {
-    return this.http.get<GetFinanceResponse>(`${this.baseUrl}/${url}`);
+  getOutcomes = (url: string): GetFinanceResponse => {
+  return {data};
+    // return this.http.get<GetFinanceResponse>(`${this.baseUrl}/${url}`);
   };
 
   addOutcome = (url: string, data: FinanceInput) => {
