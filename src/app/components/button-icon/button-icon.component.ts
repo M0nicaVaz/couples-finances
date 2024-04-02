@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { ionPencil, ionTrashBin } from '@ng-icons/ionicons';
 
@@ -12,4 +12,9 @@ import { ionPencil, ionTrashBin } from '@ng-icons/ionicons';
 })
 export class ButtonIconComponent {
   @Input({ required: true }) text: string = '';
+  @Output('click') onClick = new EventEmitter<void>();
+
+  click() {
+    this.onClick.emit();
+  }
 }

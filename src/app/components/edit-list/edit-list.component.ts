@@ -11,4 +11,6 @@ import { ButtonIconComponent } from '../button-icon/button-icon.component';
   templateUrl: './edit-list.component.html',
   styleUrl: './edit-list.component.scss',
 })
-export class EditListComponent {}
+export class EditListComponent {
+
+}
