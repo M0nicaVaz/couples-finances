@@ -5,6 +5,7 @@ import {
   GetFinanceResponse,
 } from '../interfaces/finances.interface';
 import { HttpClient } from '@angular/common/http';
+import { data } from './outcome-mock';
 
 @Injectable({
   providedIn: 'root',
@@ -13,12 +14,23 @@ export class FinancesService {
   private baseUrl = 'http://localhost:8000/api';
 
   constructor(private http: HttpClient) {}
+  /* incomes */
 
-  getOutcomes = (url: string): Observable<GetFinanceResponse> => {
+  getIncomes = (url: string): Observable<GetFinanceResponse> => {
     return this.http.get<GetFinanceResponse>(`${this.baseUrl}/${url}`);
   };
 
-  getIncomes = (url: string): Observable<GetFinanceResponse> => {
+  addIncome = (url: string, data: FinanceInput) => {
+    return this.http.post(`${this.baseUrl}/${url}`, data);
+  };
+
+  editIncome = (url: string, data: FinanceInput) => {
+    return this.http.put(`${this.baseUrl}/${url}`, data);
+  };
+
+  /* outcomes */
+
+  getOutcomes = (url: string): Observable<GetFinanceResponse> => {
     return this.http.get<GetFinanceResponse>(`${this.baseUrl}/${url}`);
   };
 
@@ -26,7 +38,11 @@ export class FinancesService {
     return this.http.post(`${this.baseUrl}/${url}`, data);
   };
 
-  addIncome = (url: string, data: FinanceInput) => {
-    return this.http.post(`${this.baseUrl}/${url}`, data);
+  deleteOutcome = (url: string) => {
+    return this.http.delete(`${this.baseUrl}/${url}`);
+  };
+
+  editOutcome = (url: string, data: FinanceInput) => {
+    return this.http.put(`${this.baseUrl}/${url}`, data);
   };
 }
